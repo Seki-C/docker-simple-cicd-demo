@@ -1,4 +1,4 @@
-name: Deploy Simple CI/CD
+name: Deploy Simple CI/CD 
 
 on:
   push:
@@ -8,10 +8,11 @@ env:
   AWS_REGION: us-east-1
   ECS_SERVICE: simple-cicd-service
   ECS_CLUSTER: simple-cicd-cluster-1
-  ECS_TASk_DEFINITION: .aws/task-definition.json
+  ECS_TASK_DEFINITION: .aws/task-definition.json
 
 permissions:
   contents: read
+
 
 jobs:
   web-test-build-image:
@@ -126,23 +127,26 @@ jobs:
           cluster: ${{ env.ECS_CLUSTER }}
           wait-for-service-stability: true
 
-# web Container Build/Test
+# Web Container Build/Test
 ## Get Source
 ## Build/Test
 ## Docker Image Build
 ## Login AWS
 ## Push image to ECR
 
-#API Container Build/Test
+# API Container Build/Test
 ## Get Source
 ## Build/Test
 ## Docker Image Build
 ## Login AWS
 ## Push image to ECR
-
 
 # Deploy
 ## Get Source
 ## Login AWS
 ## Edit Task Definition
 ## Deploy
+
+
+
+
